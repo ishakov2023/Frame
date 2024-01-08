@@ -1,0 +1,16 @@
+{
+  "name": "ishak/frame",
+  "autoload": {
+    "psr-4": {
+      "App\\": "scr/"
+    }
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.8.0",
+    "phpstan/phpstan": "^1.10"
+  },
+  "scripts": {
+    "phpcs": "./vendor/bin/phpcs --standard=PSR12 scr/",
+    "phpstan": "vendor/bin/phpstan analyse scr/"
+  }
+}
