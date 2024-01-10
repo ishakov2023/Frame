@@ -11,7 +11,13 @@
     "phpstan/phpstan": "^1.10"
   },
   "scripts": {
-    "phpcs": "./vendor/bin/phpcs --standard=PSR12 scr/",
-    "phpstan": "./vendor/bin/phpstan analyse --level 8 public/"
+    "check":{
+    "phpcs": "./vendor/bin/phpcs scr/",
+    "phpstan": "./vendor/bin/phpstan analyse --level 8 scr/"
+    }
+  },
+  "require": {
+    "symfony/finder": "^6.4",
+    "symfony/http-foundation": "^6.4"
   }
 }

@@ -1,13 +1,11 @@
 <?php
-require_once __DIR__ . "/../vendor/autoload.php ";
 
-use App\hello\HelloWorld;
+require_once __DIR__ . '/../vendor/autoload.php';
 
-
-$yes = new HelloWorld();
-
-$yes->hello(123);
+use App\HelloWorld\HelloWorld;
 
 
 
+$hello = new HelloWorld();
 
+echo $hello->hello();
