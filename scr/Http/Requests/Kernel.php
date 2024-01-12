@@ -8,10 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Kernel
 {
-    /**
-     * @var array HelloWorldMiddleware
-     */
-    private $middlewares = [];
+    private array $middlewares = [];
 
     public function __construct()
     {
@@ -33,7 +30,6 @@ class Kernel
                 return $response;
             }
         }
-
         return new Response('Not found', 404);
     }
 }
