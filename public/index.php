@@ -14,8 +14,6 @@ $response = $kernel->handle($request);
 
 $response->send();
 
-
-
 $hello = new HelloWorld();
 
 echo $hello->hello();

@@ -8,9 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Kernel
 {
-    /**
-     * @var array HelloWorldMiddleware
-     */
     private $middlewares = [];
 
     public function __construct()
