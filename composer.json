@@ -1,0 +1,23 @@
+{
+  "name": "ishak/frame",
+  "autoload": {
+    "psr-4": {
+      "App\\": "scr/"
+    }
+  },
+  "require-dev": {
+    "roave/security-advisories":"dev-master",
+    "squizlabs/php_codesniffer": "^3.8.0",
+    "phpstan/phpstan": "^1.10"
+  },
+  "scripts": {
+    "check":{
+    "phpcs": "./vendor/bin/phpcs scr/",
+    "phpstan": "./vendor/bin/phpstan analyse --level 8 scr/"
+    }
+  },
+  "require": {
+    "symfony/finder": "^6.4",
+    "symfony/http-foundation": "^6.4"
+  }
+}
