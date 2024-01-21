@@ -2,19 +2,13 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\Http\Handler\HelloWorldHandler;
-use App\Http\Middleware\HelloWorldMiddleware;
-use App\Http\Middleware\WorldMiddleware;
-use App\Http\Requests\Kernel;
+use App\Http\Handler\Handler;
+use App\Http\Kernel;
+
 use Symfony\Component\HttpFoundation\Request;
 
 $request = Request::createFromGlobals();
 
-$kernel = new Kernel(
-    handler: new HelloWorldHandler(),
-    middlewares: [
-        new HelloWorldMiddleware(),
-        new WorldMiddleware()],
-);
+$kernel = new Kernel(new Handler());
 $response = $kernel->handle($request);
 $response->send();

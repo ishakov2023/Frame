@@ -2,20 +2,17 @@
 
 namespace App\Http\Handler;
 
-
-use App\Http\Handler\interface\Handler;
-use App\Http\Middleware\interface\Middleware;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class PipeLine
+final class PipeLine
 {
     /**
-     * @param Handler $handler
-     * @param list<Middleware> $middlewares
+     * @param HandlerInterface $handler
+     * @param list<string> $middlewares
      */
     public function __construct(
-        private readonly Handler $handler,
+        private readonly HandlerInterface $handler,
         private array $middlewares,
     ) {
     }
@@ -24,7 +21,7 @@ class PipeLine
     {
         $middleware = array_shift($this->middlewares);
         if ($middleware !== null) {
-            return $middleware->handle($request, [$this, 'handle']);
+            return (new $middleware())->handle($request, [$this, 'handle']);
         }
         return $this->handler->handle($request);
     }

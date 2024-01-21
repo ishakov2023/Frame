@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Middleware\interface;
+namespace App\Http\Middleware;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-interface Middleware
+interface MiddlewareInterface
 {
     /**
      * @param callable(Request): Response $next
