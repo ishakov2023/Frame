@@ -1,0 +1,8 @@
+<ruleset name="">
+
+    <file>./src</file>
+
+    <rule ref="PSR12"/>
+
+
+</ruleset>
