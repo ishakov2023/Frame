@@ -5,10 +5,17 @@ namespace App\HelloWorld;
 class HelloWorld
 {
     /**
-     * @return string
+     * @var $name string
      */
+    public $name;
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+
     public function hello(): string
     {
-        return "Hello World";
+         echo "Hello " . $this->name;
+        return true;
     }
 }
