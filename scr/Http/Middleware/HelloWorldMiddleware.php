@@ -9,6 +9,6 @@ final class HelloWorldMiddleware implements MiddlewareInterface
 {
     public function handle(Request $request, callable $next): Response
     {
-        return new Response('Hello World');
+        return new Response('');
     }
 }

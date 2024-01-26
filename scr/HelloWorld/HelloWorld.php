@@ -7,15 +7,18 @@ class HelloWorld
     /**
      * @var $name string
      */
-    public $name;
+    public string $name;
+
     public function __construct($name)
     {
         $this->name = $name;
     }
 
+    /**
+     * @return string
+     */
     public function hello(): string
     {
-         echo "Hello " . $this->name;
-        return true;
+        return "Hello " . $this->name;
     }
 }
